@@ -1,9 +1,18 @@
 import { notFound } from 'next/navigation'
 
-import { Page as MakeswiftPage } from '@makeswift/runtime/next'
 import { getSiteVersion } from '@makeswift/runtime/next/server'
 
 import { client } from '@/lib/makeswift/client'
+
+
+import dynamic from 'next/dynamic'
+
+const MakeswiftPage = dynamic(
+  () => import('@makeswift/runtime/next').then((mod) => mod.Page),
+  {
+    ssr: false,
+  }
+)
 
 type ParsedUrlQuery = { path?: string[] }
 

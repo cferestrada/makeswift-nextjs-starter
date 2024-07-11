@@ -31,18 +31,6 @@ module.exports = withBundleAnalyzer(
       ],
     },
     reactStrictMode: true,
-    transpilePackages: [
-      '@oriuminc/algolia',
-      '@oriuminc/amplience',
-      '@oriuminc/base',
-      '@oriuminc/chakra',
-      '@oriuminc/bigcommerce',
-      '@oriuminc/contentful',
-      '@oriuminc/contentstack',
-      '@oriuminc/templates',
-      '@oriuminc/ui',
-      '@oriuminc/makeswift',
-    ],
     redirects() {
       return [
         {

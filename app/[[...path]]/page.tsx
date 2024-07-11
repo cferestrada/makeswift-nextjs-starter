@@ -19,8 +19,8 @@ type ParsedUrlQuery = { path?: string[] }
 export async function generateStaticParams() {
   return await client
     .getPages()
-    .map(page => ({
-      path: page.path.split('/').filter(segment => segment !== ''),
+    .map((page: { path: string }) => ({
+      path: page.path.split('/').filter((segment: string) => segment !== ''),
     }))
     .toArray()
 }
